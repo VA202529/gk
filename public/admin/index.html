@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Glans & Klasse Admin</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section id="loginScreen" class="login-screen">
+      <form id="loginForm" class="login-card">
+        <div class="brand">GK</div>
+        <h1>Glans & Klasse Admin</h1>
+        <p>Beheer offertes, leads, berichten en reviews vanuit Google Sheets.</p>
+
+        <label>
+          Web App URL
+          <input id="apiUrl" name="apiUrl" autocomplete="url" required />
+        </label>
+
+        <label>
+          Gebruikersnaam
+          <input name="username" autocomplete="username" required />
+        </label>
+
+        <label>
+          Toegangscode
+          <input name="passcode" type="password" autocomplete="current-password" required />
+        </label>
+
+        <button id="loginBtn" class="btn primary" type="submit">Inloggen</button>
+        <div id="loginError" class="error" role="alert"></div>
+      </form>
+    </section>
+
+    <section id="appScreen" class="app hidden">
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <strong>Glans & Klasse</strong>
+          <span>Backoffice</span>
+        </div>
+        <nav id="nav" class="nav" aria-label="Admin navigatie"></nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <h1 id="pageTitle">Dashboard</h1>
+            <p>Ingelogd als <span id="currentUser">admin</span></p>
+          </div>
+          <div class="actions">
+            <button id="refreshBtn" class="btn">Verversen</button>
+            <button id="logoutBtn" class="btn">Uitloggen</button>
+          </div>
+        </header>
+
+        <section id="content"></section>
+      </main>
+    </section>
+
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true"></div>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
