@@ -446,6 +446,12 @@ Huidig:
 - Offerteaanvragen schrijven naar Google Sheets zodra `VITE_GOOGLE_APPS_SCRIPT_URL` is ingesteld.
 - Prive berichten schrijven naar Google Sheets zodra `VITE_GOOGLE_APPS_SCRIPT_URL` is ingesteld.
 - Reviews schrijven naar Google Sheets en worden pas publiek getoond na goedkeuring.
+- Admin data wordt direct vanuit lokale cache getoond en daarna elke 15 seconden op de achtergrond ververst.
+- Het admin-dashboard heeft een tab `Medewerkers`.
+- Medewerkers hebben voor nu de functie `Lead verantwoordelijke`.
+- Leads, offertes en berichten kunnen aan een medewerker worden gekoppeld via `assigned_to`.
+- Reviews ondersteunen optioneel een afbeelding via `image_url` of Drive-upload.
+- Review upload gebruikt in Google Drive de structuur `Glans & Klasse Website / Reviews / reviewnaam`.
 
 ## Setup stappen
 
@@ -462,3 +468,5 @@ Huidig:
 11. Wijzig de standaard toegangscode direct via de `Admins` tab.
 
 Na wijzigingen in `google-apps-script/Code.gs` moet de Apps Script Web App opnieuw gedeployed worden. De huidige code doet de zware Sheet-setup alleen nog bij eerste initialisatie of bij `?action=setup`, zodat formulierinzendingen sneller reageren.
+
+Na de nieuwste admin-optimalisaties moet `Code.gs` opnieuw gedeployed worden. Open daarna opnieuw `?action=setup`, zodat het tabblad `Employees` en de extra review-afbeeldingskolommen worden toegevoegd zonder bestaande data te verwijderen.
