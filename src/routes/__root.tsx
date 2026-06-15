@@ -91,6 +91,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"ada263ff53a972338ec199cf2cdd6f50"})});',
+          }}
+        />
       </head>
       <body>
         {children}
